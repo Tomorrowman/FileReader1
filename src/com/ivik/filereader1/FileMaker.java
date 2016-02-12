@@ -10,12 +10,12 @@ import java.io.IOException;
 public class FileMaker {
 
     public static void main(String[] args) throws IOException {
-        String fileName = "SumOfAllIntegers.txt";
-        char[] in = new char[50];
+        String fileName = "SortNumbers.txt";
+        char[] in = new char[100];
         FileWriter fileWriter;
         FileReader fileReader;
-        fileWriter = new FileWriter("SumOfAllIntegers.txt");
-        fileWriter.write("23\n77\n25");
+        fileWriter = new FileWriter("SortNumbers.txt");
+        fileWriter.write("70.920 -38.797 14.354 99.323 90.374 7.581\n-37.507 -3.263 40.079 27.999 65.213 -55.552");
         fileWriter.flush();
         fileWriter.close();
 

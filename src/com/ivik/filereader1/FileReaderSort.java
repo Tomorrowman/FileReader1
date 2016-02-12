@@ -3,6 +3,7 @@ package com.ivik.filereader1;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by Eigenaar on 12-2-2016.
@@ -14,7 +15,6 @@ public class FileReaderSort {
         String line;
         FileReader fileReader;
         BufferedReader bufferedReader;
-        int num = 0;
 
 
         fileReader = new FileReader(fileName);
@@ -23,16 +23,23 @@ public class FileReaderSort {
 
         while (line != null) {
 
-            num = Integer.parseInt(line.trim());
+            String[] stringArray = line.split(" ");
+            double[] doubleArray = new double[stringArray.length];
+
+            for (int i = 0; i < stringArray.length; i++) {
+                doubleArray[i] = Double.parseDouble(stringArray[i]);
+            }
+            Arrays.sort(doubleArray);
+            for (double number : doubleArray) {
+                System.out.print(number + " ");
+            }
+            System.out.println("");
 
             line = bufferedReader.readLine();
 
+
+
         }
-        System.out.println(num);
-
         bufferedReader.close();
-
-
-
     }
 }
